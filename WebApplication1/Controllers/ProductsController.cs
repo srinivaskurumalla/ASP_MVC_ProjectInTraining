@@ -106,7 +106,7 @@ namespace WebApplication1.Controllers
         }
 
 
-      
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             var product = _context.Products.FirstOrDefault(p =>p.Id == id);
@@ -114,8 +114,10 @@ namespace WebApplication1.Controllers
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+                return RedirectToAction("Index");
+
             }
-            return RedirectToAction("Index");
+            return View();
         }
         //Products/MyOrders/101
         public ActionResult MyOrders(int id)
