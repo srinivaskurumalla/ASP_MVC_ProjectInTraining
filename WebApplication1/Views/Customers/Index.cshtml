@@ -1,0 +1,29 @@
+﻿@using WebApplication1.Models;
+@model List<Customer>   
+
+@* "@model is used to create object of customer class named Model"*@
+
+@{
+    ViewBag.Title = "Index";
+   // List<Customer> customers = ViewBag.Customers ;
+}
+
+<h2>Customers Data</h2>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobile No</th>
+    </tr>
+    @foreach(var c in Model)
+     {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Name</td>
+                    <td>@c.MobileNo</td>
+                </tr>
+     }
+</table>
+

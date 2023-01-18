@@ -1,0 +1,17 @@
+﻿@using WebApplication1.Models;
+@model Customer
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add new Customet</h2>
+<hr />
+@using (Html.BeginForm())
+{
+
+    <div class="mb-2">
+        @Html.LabelFor(c => c.Name, new {@class = "form-label"});
+
+    </div>
+}
+

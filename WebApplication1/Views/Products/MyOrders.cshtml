@@ -1,0 +1,26 @@
+﻿@using WebApplication1.Models;
+@model MyOrderDetailsViewModel
+@{
+    ViewBag.Title = "MyOrders";
+}
+
+<h2>MyOrders</h2>
+<h3>@Model.Name</h3>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach (var vm in Model.Products)
+            {
+                <tr>
+                    <td>@vm.ProductName</td>
+                    <td>@vm.Price</td>
+                    <td>@vm.Quantity</td>
+                </tr>
+            }
+
+</table>
+
