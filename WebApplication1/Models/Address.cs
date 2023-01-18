@@ -45,5 +45,20 @@ namespace WebApplication1.Models
         [Column(TypeName = "varchar")]
         [StringLength(50)]
         public string PinCode { get; set; }
+
+
+        //Navigation
+    //    public Customer Customer { get; set; }
+
+        //Foreign Key
+        public int CustomerId { get; set; }
+
+
+       // [ForeignKey("CustomerId")]
+       // [InverseProperty("Addresses")]
+        //Navigation
+        public Customer Customer { get; set; }
+
+
     }
 }

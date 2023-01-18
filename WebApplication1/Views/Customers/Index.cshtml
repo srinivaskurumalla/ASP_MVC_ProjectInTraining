@@ -11,18 +11,22 @@
 <h2>Customers Data</h2>
 <hr />
 
+    @Html.ActionLink("Add New","Create","Customers", null, new { @class = "btn btn-info" })
+
 <table class="table">
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>Mobile No</th>
+        
     </tr>
     @foreach(var c in Model)
      {
                 <tr>
                     <td>@c.Id</td>
-                    <td>@c.Name</td>
-                    <td>@c.MobileNo</td>
+                  
+                    <td>@Html.ActionLink(c.Name, "Details", "Customers", new { id = c.Id }, null) </td>
+
+                   
                 </tr>
      }
 </table>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +11,13 @@ namespace WebApplication1.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string MobileNo { get; set; }
+
+        
+        public DateTime DateOfBirth { get; set; }
+
+      //  public ICollection<Address> Addresses { get; set; }
+      //  public Address Address { get; set; }
+      //  public string City { get; set; }
 
         //Navigation Property
       /*  public Address Address { get; set; }

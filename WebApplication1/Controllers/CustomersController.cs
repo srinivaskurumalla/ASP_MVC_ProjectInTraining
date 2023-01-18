@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -87,20 +88,69 @@ namespace WebApplication1.Controllers
         //Customers/Details/1
         public ActionResult Details(int id)
         {
-           // Customer customerObj= new Customer();
-          // var customer = customerObj.GetCustomers().FirstOrDefault(c => c.Id == id);
-
+            // Customer customerObj= new Customer();
+            // var customer = customerObj.GetCustomers().FirstOrDefault(c => c.Id == id);
+            
             var customer = _context.Customers.FirstOrDefault(c => c.Id == id);
             if(customer != null)
             {
+                var addresses = _context.Addresses.ToList();
+                addresses.RemoveAll(address => address.CustomerId != id);
+                /* foreach (var a in addresses)
+                 {
+                     if(a.CustomerId == id)
+                     {
+                         ViewBag.Addresses.Add(a);
+                       //  ViewBag.CustomerId1 = customer.Id;
+                        // return View(customer);
+                     }
+                 }*/
+                ViewBag.Addresses = addresses;
                 return View(customer);
             }
             return HttpNotFound("Customer with "+  id  + "not exists");
 
         }
 
-        public ActionResult Create(int id)
+        public ActionResult Create()
         {
+           /* var addresses = _context.Addresses.ToList();
+
+            ViewBag.Addresses = addresses;*/
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Customers.Add(customer);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+           /* var addresses = _context.Addresses.ToList();
+
+            ViewBag.Addresses = addresses;*/
+            return View();
+        }
+
+      //  [Route("Customers/CreateAddress/{CustomerId}")]
+        public ActionResult CreateAddress(int CustomerId)
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateAddress(Address address)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Addresses.Add(address);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }

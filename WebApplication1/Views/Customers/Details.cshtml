@@ -6,9 +6,39 @@
 
 <h2>Details Of Customer based on passed Id</h2>
 <hr />
+@Html.ActionLink("Add New Address","CreateAddress","Customers",new {CustomerId = Model.Id},new {@class = "btn btn-primary"})
+@Html.ActionLink("Go Back to Index","Index","Customers",null,new {@class="m-3"})
 <ul>
     <li>Id : @Model.Id</li>
     <li>Name :@Model.Name</li>
     <li>Mobile :@Model.MobileNo</li>
+    <li>Date Of Birth :@Model.DateOfBirth</li>
+   
 </ul>
+
+
+<table class="table">
+    <tr>
+        <th>HouseNo</th>
+        <th>StreetName</th>
+        <th>FlatName</th>
+        <th>AddressLine1</th>
+        <th>AddressLine2</th>
+        <th>City</th>
+        <th>PinCode</th>
+    </tr>
+    @foreach(var a in ViewBag.Addresses)
+            {
+                <tr>
+                    <td>@a.HouseNo</td>
+                    <td>@a.StreetName</td>
+                    <td>@a.FlatName</td>
+                    <td>@a.AddressLine1</td>
+                    <td>@a.AddressLine2</td>
+                    <td>@a.City</td>
+                    <td>@a.PinCode</td>
+                </tr>
+            }
+</table>
+
 

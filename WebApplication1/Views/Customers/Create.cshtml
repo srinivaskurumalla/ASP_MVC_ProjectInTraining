@@ -4,14 +4,30 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Add new Customet</h2>
+<h2>Add new Customer</h2>
 <hr />
 @using (Html.BeginForm())
 {
 
     <div class="mb-2">
-        @Html.LabelFor(c => c.Name, new {@class = "form-label"});
-
+        @Html.LabelFor(c => c.Name, new { @class = "form-label" })
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Name)
     </div>
+
+    <div class="mb-2">
+        @Html.LabelFor(c => c.MobileNo, new { @class = "form-label" })
+        @Html.TextBoxFor(c => c.MobileNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.MobileNo)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(c => c.DateOfBirth, new { @class = "form-label" })
+        @Html.TextBoxFor(c => c.DateOfBirth, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.DateOfBirth)
+    </div>
+    <div class="mt-2">
+        <input type="submit" id="BtnSubmit" class="btn btn-primary" value="Submit" />
+    </div>
+
 }
 

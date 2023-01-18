@@ -141,6 +141,30 @@
     <Compile Include="Migrations\202301180457089_CreatedAddressTable.designer.cs">
       <DependentUpon>202301180457089_CreatedAddressTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301180846390_AddedForeignKeyInAddress.cs" />
+    <Compile Include="Migrations\202301180846390_AddedForeignKeyInAddress.designer.cs">
+      <DependentUpon>202301180846390_AddedForeignKeyInAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301180908294_AddedDOBforCustomer.cs" />
+    <Compile Include="Migrations\202301180908294_AddedDOBforCustomer.designer.cs">
+      <DependentUpon>202301180908294_AddedDOBforCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301180918082_AddedcityforCustomerTable.cs" />
+    <Compile Include="Migrations\202301180918082_AddedcityforCustomerTable.designer.cs">
+      <DependentUpon>202301180918082_AddedcityforCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301180921037_RemovedcityforCustomerTable.cs" />
+    <Compile Include="Migrations\202301180921037_RemovedcityforCustomerTable.designer.cs">
+      <DependentUpon>202301180921037_RemovedcityforCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301180929290_RemovedNotNull.cs" />
+    <Compile Include="Migrations\202301180929290_RemovedNotNull.designer.cs">
+      <DependentUpon>202301180929290_RemovedNotNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301180932178_RemovedNull.cs" />
+    <Compile Include="Migrations\202301180932178_RemovedNull.designer.cs">
+      <DependentUpon>202301180932178_RemovedNull.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressDD.cs" />
@@ -237,6 +261,7 @@
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Customers\CreateAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -250,6 +275,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301180457089_CreatedAddressTable.resx">
       <DependentUpon>202301180457089_CreatedAddressTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301180846390_AddedForeignKeyInAddress.resx">
+      <DependentUpon>202301180846390_AddedForeignKeyInAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301180908294_AddedDOBforCustomer.resx">
+      <DependentUpon>202301180908294_AddedDOBforCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301180918082_AddedcityforCustomerTable.resx">
+      <DependentUpon>202301180918082_AddedcityforCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301180921037_RemovedcityforCustomerTable.resx">
+      <DependentUpon>202301180921037_RemovedcityforCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301180929290_RemovedNotNull.resx">
+      <DependentUpon>202301180929290_RemovedNotNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301180932178_RemovedNull.resx">
+      <DependentUpon>202301180932178_RemovedNull.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

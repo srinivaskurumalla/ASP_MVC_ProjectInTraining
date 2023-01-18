@@ -1,0 +1,58 @@
+﻿@using WebApplication1.Models;
+@model Address
+
+@{
+    ViewBag.Title = "CreateAddress";
+}
+
+<h2>Add Address</h2>
+
+@using (Html.BeginForm())
+{
+@Html.HiddenFor(a => a.CustomerId)
+
+    <div class="mb-2">
+        @Html.LabelFor(a => a.HouseNo, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.HouseNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.HouseNo)
+    </div>
+
+    <div class="mb-2">
+        @Html.LabelFor(a => a.StreetName, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.StreetName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.StreetName)
+    </div>
+
+    <div class="mb-2">
+        @Html.LabelFor(a => a.FlatName, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.FlatName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.FlatName)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(a => a.AddressLine1, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.AddressLine1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.AddressLine1)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(a => a.AddressLine2, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.AddressLine2, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.AddressLine2)
+    </div>
+
+    <div class="mb-2">
+        @Html.LabelFor(a => a.City, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.City)
+    </div>
+
+    <div class="mb-2">
+        @Html.LabelFor(a => a.PinCode, new { @class = "form-label" })
+        @Html.TextBoxFor(a => a.PinCode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.PinCode)
+    </div>
+    <div class="mt-2">
+        <input type="submit" id="BtnSubmit" class="btn btn-primary" value="Submit" />
+    </div>
+
+}
+

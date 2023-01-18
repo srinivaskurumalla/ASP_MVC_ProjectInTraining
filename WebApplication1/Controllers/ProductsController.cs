@@ -57,8 +57,10 @@ namespace WebApplication1.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Product product)
         {
+
             if(ModelState.IsValid)
             {
                 _context.Products.Add(product);
